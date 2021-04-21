@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>开门</title>
+    <script src="https://cdn.bootcdn.net/ajax/libs/vConsole/3.4.1/vconsole.min.js"></script>
+    <script src="https://cdn.bootcdn.net/ajax/libs/axios/0.21.1/axios.min.js"></script>
+    <script>
+      // init vConsole
+      var vConsole = new VConsole()
+      console.log("Hello world")
+      console.log(axios)
+    </script>
+    <script>
+      let openDoor = async () => {
+        let res = await axios({
+          url: "https://zhmj.bjyhhy.cn/mj/mjfk",
+          method: "POST",
+          headers: {
+            "user-agent":
+              "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/53.0.2785.143 Safari/537.36 MicroMessenger/7.0.9.501 NetType/WIFI MiniProgramEnv/Windows WindowsWechat",
+          },
+          data: {
+            controlType: 2,
+            doorIndexCodes: "c6c125f12a1f42e885f1873134f6422d",
+          },
+        })
+
+        console.log(res.data)
+      }
+    </script>
+  </head>
+  <body>
+    <button
+      style="height: 100px; width: 200px; font-size: 40px"
+      onclick="openDoor()"
+    >
+      开门
+    </button>
+  </body>
+</html>
