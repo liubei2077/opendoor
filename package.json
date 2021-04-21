@@ -1,5 +1,14 @@
 {
   "dependencies": {
     "axios": "^0.21.1"
-  }
+  },
+  "scripts": {
+    "start": "node opendoor.js"
+  },
+  "name": "opendoor",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/liubei2077/opendoor.git",
+  "author": "liubei2077 <liubei2077@outlook.com>",
+  "license": "MIT"
 }
